@@ -1,0 +1,7 @@
+{
+  "name": "Trustly",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
