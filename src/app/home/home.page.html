@@ -13,13 +13,52 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container"> 
-    launch (Banking Swift Test) <ion-router-link href="https://swiftweb-bankingswifttest.installprogram.eu/Swift.StateMachine/swiftlaunch/embeddedlauncher">here</ion-router-link> <br/>
-    launch (Banking Swift IQ2) <ion-router-link href="https://swiftweb-iq2qa2.installprogram.eu/Swift.StateMachine/swiftlaunch/embeddedlauncher">here</ion-router-link> <br/>
-    launch (Standalone Launcher) <ion-router-link href="https://swiftweb-iq2qa2.installprogram.eu/Swift.StateMachine/swiftlaunch/uilauncher">here</ion-router-link><br/>
-    launch (Betway Staging) <ion-router-link href="https://staging-va.betway.com/?swiftsdk=true">here</ion-router-link><br/>
-    launch (Betway AZ) <ion-router-link href="https://az.betway.com/sports/home?segment=usarizona">here</ion-router-link><br/>
-    launch (Atlantic Test) <ion-router-link href="https://swiftweb-atlantictest.installprogram.eu/Swift.StateMachine/swiftlaunch/embeddedlauncher">here</ion-router-link><br/>
-    launch (QC) <ion-router-link href="https://swiftweb-qualitycontrol.installprogram.eu/Swift.StateMachine/swiftlaunch/embeddedlauncher">here</ion-router-link><br/>
+  <!-- <div id="container">
+    launch (Banking Swift Test) <ion-router-link
+      href="https://swiftweb-bankingswifttest.installprogram.eu/Swift.StateMachine/swiftlaunch/embeddedlauncher">here
+    </ion-router-link> <br />
+    launch (Banking Swift IQ2) <ion-router-link
+      href="https://swiftweb-iq2qa2.installprogram.eu/Swift.StateMachine/swiftlaunch/embeddedlauncher">here
+    </ion-router-link> <br />
+    launch (Standalone Launcher) <ion-router-link
+      href="https://swiftweb-iq2qa2.installprogram.eu/Swift.StateMachine/swiftlaunch/uilauncher">here</ion-router-link>
+    <br />
+    launch (Betway Staging) <ion-router-link href="https://staging-va.betway.com/?swiftsdk=true">here</ion-router-link>
+    <br />
+    launch (Betway AZ) <ion-router-link href="https://az.betway.com/sports/home?segment=usarizona">here
+    </ion-router-link><br />
+    launch (Atlantic Test) <ion-router-link
+      href="https://swiftweb-atlantictest.installprogram.eu/Swift.StateMachine/swiftlaunch/embeddedlauncher">here
+    </ion-router-link><br />
+    launch (QC) <ion-router-link
+      href="https://swiftweb-qualitycontrol.installprogram.eu/Swift.StateMachine/swiftlaunch/embeddedlauncher">here
+    </ion-router-link><br />
+  </div> -->
+
+
+  <div id="container-firebase">
+    <ion-list class="ios list-ios hydrated">
+      <ion-list-header class="ios hydrated">
+        Urls
+      </ion-list-header>
+
+      <ion-item button="true" *ngFor="let url of Urls" class="url-list" (click)="redirect(url.url)">
+        <ion-label>
+          <h5>
+            <ion-icon name="url-name"></ion-icon> {{url.name}}
+          </h5>
+
+        </ion-label>
+
+        <div class="item-note" item-end>
+          <button ion-button clear [routerLink]="['/edit/', url.$key]">
+            <ion-icon name="create" style="zoom:2.0"></ion-icon>
+          </button>
+          <button ion-button clear (click)="deleteUrl(url.$key)">
+            <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
