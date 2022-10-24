@@ -48,4 +48,14 @@ export class HomePage {
     window.location.href = url;
   }
 
+  isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+
+  click($event: CustomEvent) {
+    console.log($event.detail.checked);
+  }
+
 }
