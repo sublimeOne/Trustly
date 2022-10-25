@@ -56,6 +56,10 @@ export class HomePage {
 
   click($event: CustomEvent) {
     console.log($event.detail.checked);
+
+
+
+
   }
 
 }
