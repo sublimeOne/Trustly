@@ -13,7 +13,10 @@ export class HomePage {
 
   constructor(
     private urlService: DataServiceService
-  ) { }
+  ) {
+
+
+  }
 
   ngOnInit() {
     this.fetchUrls();
